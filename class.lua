@@ -103,7 +103,7 @@ local function ischild(child, father)
 end
 
 function Class.childof(child, father)
-	if not (Class.isclass(child) or Class.isclass(father)) then
+	if not (Class.isclass(child) and Class.isclass(father)) then
 		local _ = DEBUG_MODE and error("error value in ischild")
 		return false
 	end
@@ -111,7 +111,7 @@ function Class.childof(child, father)
 end
 
 function Class.instanceof(instance, cls)
-	if not (Class.isclass(cls) or Class.isinstance(instance)) then
+	if not (Class.isclass(cls) and Class.isinstance(instance)) then
 		local _ = DEBUG_MODE and error("error value in isinstance")
 		return false
 	end

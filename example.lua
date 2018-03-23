@@ -72,6 +72,8 @@ for _, v in ipairs(child_list) do
 		assert(cls:childof(p))
 	end
 end
+assert(not child:childof(Father))
+assert(not Child:childof(father))
 print("Success: child of")
 
 for _, v in ipairs(child_list) do
@@ -80,4 +82,6 @@ for _, v in ipairs(child_list) do
 		assert(inst:instanceof(p))
 	end
 end
+assert(not Child:instanceof(Father))
+assert(not child:instanceof(father))
 print("Success: instance of")
